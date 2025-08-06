@@ -1,9 +1,8 @@
-'use client';
+'use client'
 
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gray-500 flex items-center justify-center px-6 py-12">
@@ -30,7 +29,7 @@ export default function HomePage() {
             Upload your resume to get instant insights, job matches, and expert suggestions to level up your career.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            <Link href="/analyze">
+            <Link href="/sign-up">
               <Button className="px-6 py-3 text-lg w-full md:w-auto cursor-pointer">Explore</Button>
             </Link>
             <Link href="/about">
