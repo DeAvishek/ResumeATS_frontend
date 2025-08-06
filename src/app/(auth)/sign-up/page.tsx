@@ -5,6 +5,7 @@ import { signup_validation } from "@/app/schema/sigup"
 import z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from '@hookform/resolvers/zod'
+import axios from "axios"
 import {
     Form,
     FormControl,
@@ -16,9 +17,11 @@ import {
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 const Page = () => {
     const [isSubmit, setisSubmit] = useState<boolean>(false)
     const [responseM, setResponseM] = useState<string>("")
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof signup_validation>>({
         resolver: zodResolver(signup_validation),
@@ -30,14 +33,31 @@ const Page = () => {
 
     })
 
+    const handleSignup = async(data:z.infer<typeof signup_validation>)=>{
+        try {
+            setisSubmit(true);
+            const response =await axios.post("url",data);
+            setResponseM(response.data.message) //todo
+            if(response.status==200){
+                router.push("somewher") //todo
+            }
+        } catch (error) {
+            if(axios.isAxiosError(error)){
+                setResponseM(error.response?.data.error?.message || "Email exists") //todo
+            }else{
+                setResponseM("Server down we will reach you soon")
+            }
+        }
+    }
+
 
     return (
         <>
-            <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500 px-4">
+            <div className="min-h-screen flex items-center justify-center bg-gray-300 px-4">
                 <div className="w-full max-w-md p-10 bg-gray-300 rounded-2xl shadow-xl space-y-6">
                     <h1 className="text-4xl font-bold text-sky-700 text-center">Join Now</h1>
                     <div className="text-center flex justify-center items-center">
-                        <p className="mt-2 text-gray-600">Sign up to start your movie adventure </p>
+                        <p className="mt-2 text-gray-600 font-bold">Sign up to experience resume</p>
                         <Image
                             src='https://imgcdn.stablediffusionweb.com/2024/9/6/3601ecbb-1538-4c91-8129-8ca1622f2a19.jpg'
                             width={50}
@@ -48,7 +68,7 @@ const Page = () => {
                     </div>
 
                     <Form {...form}>
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={form.handleSubmit(handleSignup)}>
                             <FormField
                                 name="username"
                                 control={form.control}
