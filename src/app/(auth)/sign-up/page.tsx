@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { signup_validation } from "@/app/schema/sigup"
-import z from "zod"
+import z, { json } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from "axios"
@@ -19,6 +19,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 const Page = () => {
+    const url="http://127.0.0.1:8000" //just for sack of simplicity
     const [isSubmit, setisSubmit] = useState<boolean>(false)
     const [responseM, setResponseM] = useState<string>("")
     const router = useRouter();
@@ -36,17 +37,24 @@ const Page = () => {
     const handleSignup = async(data:z.infer<typeof signup_validation>)=>{
         try {
             setisSubmit(true);
-            const response =await axios.post("url",data);
-            setResponseM(response.data.message) //todo
-            if(response.status==200){
-                router.push("somewher") //todo
+            const response =await axios.post(`${url}/user/admin/create_account`,data,
+                {headers:{ "Content-Type": "application/json" }}
+            );
+            setResponseM(response.data.message)
+            console.log(responseM)
+            if(response.data.status==200){
+                router.push('/analyzer')
             }
+
         } catch (error) {
             if(axios.isAxiosError(error)){
-                setResponseM(error.response?.data.error?.message || "Email exists") //todo
+                setResponseM(error.response?.data?.detail|| "Email exists")
+
             }else{
                 setResponseM("Server down we will reach you soon")
             }
+        }finally{
+            setisSubmit(false);
         }
     }
 
