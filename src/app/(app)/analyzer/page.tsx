@@ -1,17 +1,47 @@
-"use client";
+"use client"
 
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
-
+import axios from "axios";
+type props = {
+    jobdesc: string
+    file: File
+}
 const Page = () => {
-    const [jobdesc, setJobdesc] = useState("");
+    const url = process.env.BACKEND_URL
+    const [jobdesc, setJobdesc] = useState<string>("");
     const [file, setFile] = useState<File | null>(null);
+    const [isSubmit, setisSubmit] = useState<boolean>(false)
+    const handlesubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        if (!file || !jobdesc) {
+            window.alert("Incomplete details")
+            return;
+        }
+        e.preventDefault()
+        const formData = new FormData();
+        formData.append("jobdesc", jobdesc);
+        formData.append("file", file);
 
+        try {
+            setisSubmit(true);
+            const response = await axios.post(`${url}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+            if(response.data.status==200){
+                //show the score and other task
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 p-6">
             <form
                 className="bg-gradient-to-r from-green-200 to-yellow-200 shadow-lg rounded-2xl p-8 w-full max-w-4xl "
+                onSubmit={handlesubmit}
             >
                 <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">
                     Upload Your Resume
@@ -26,8 +56,8 @@ const Page = () => {
                         <textarea
                             id="jobdesc"
                             name="jobdesc"
-                            //   value={jobdesc}
-                            //   onChange={(e) => setJobdesc(e.target.value)}
+                            value={jobdesc}
+                            onChange={(e) => setJobdesc(e.target.value)}
                             placeholder="Enter your Job description here"
                             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
                             rows={5}
@@ -54,7 +84,7 @@ const Page = () => {
                                 id="resume"
                                 type="file"
                                 name="resume"
-                                // onChange={(e) => setFile(e.target.files?.[0] || null)}
+                                onChange={(e) => setFile(e.target.files?.[0] || null)}
                                 className="hidden"
                             />
                         </label>
@@ -65,8 +95,10 @@ const Page = () => {
                 <button
                     type="submit"
                     className="mt-6 w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium py-3 px-4 rounded-lg shadow hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                    disabled={isSubmit}
                 >
-                    Submit
+
+                    {isSubmit ? "loading.." : "Submit"}
                 </button>
             </form>
         </div>

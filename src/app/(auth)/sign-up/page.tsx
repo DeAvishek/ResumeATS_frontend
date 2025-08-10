@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { signup_validation } from "@/app/schema/sigup"
-import z, { json } from "zod"
+import z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from "axios"
