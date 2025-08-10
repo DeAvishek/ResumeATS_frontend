@@ -1,14 +1,13 @@
 "use client"
-
+// import { configDotenv } from "dotenv";
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
 import axios from "axios";
-type props = {
-    jobdesc: string
-    file: File
-}
+import { useRouter } from "next/navigation";
+
 const Page = () => {
     const url = process.env.BACKEND_URL
+    const router = useRouter()
     const [jobdesc, setJobdesc] = useState<string>("");
     const [file, setFile] = useState<File | null>(null);
     const [isSubmit, setisSubmit] = useState<boolean>(false)
@@ -24,13 +23,13 @@ const Page = () => {
 
         try {
             setisSubmit(true);
-            const response = await axios.post(`${url}`, formData, {
+            const response = await axios.post(`http://127.0.0.1:8000/analyze/upload`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             });
             if(response.data.status==200){
-                //show the score and other task
+                router.push('/score')
             }
         } catch (error) {
             console.log(error)
