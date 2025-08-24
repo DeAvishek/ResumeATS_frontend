@@ -79,6 +79,7 @@ const Page = () => {
                             alt="logo"
                         />
                     </div>
+                    {responseM && <Toast message={responseM}/>}
 
                     <Form {...form}>
                         <form className="space-y-6" onSubmit={form.handleSubmit(handleSignup)}>
@@ -147,7 +148,7 @@ const Page = () => {
                             </Button>
                         </form>
                     </Form>
-                    {responseM && <Toast message={responseM}/>}
+                    
                     <div className="text-center text-sm text-gray-600">
                         Already have an account?{" "}
                         <Link href='/sign-in' className="text-sky-600 hover:underline">
