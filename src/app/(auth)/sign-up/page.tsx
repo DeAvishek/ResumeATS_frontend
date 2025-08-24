@@ -18,8 +18,9 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import Toast from "@/app/components/Toastalert"
 const Page = () => {
-    const url="http://127.0.0.1:8000" //just for sack of simplicity
+    const backurl="http://127.0.0.1:8000" //just for sack of simplicity
     const [isSubmit, setisSubmit] = useState<boolean>(false)
     const [responseM, setResponseM] = useState<string>("")
     const router = useRouter();
@@ -37,13 +38,17 @@ const Page = () => {
     const handleSignup = async(data:z.infer<typeof signup_validation>)=>{
         try {
             setisSubmit(true);
-            const response =await axios.post(`${url}/user/admin/create_account`,data,
+            setResponseM("");
+            const response =await axios.post(`${backurl}/user/admin/create_account`,data,
                 {headers:{ "Content-Type": "application/json" }}
             );
             setResponseM(response.data.message)
             console.log(responseM)
             if(response.data.status==200){
-                router.push('/analyzer')
+                setTimeout(() => {
+                    router.push('/analyzer')
+                }, 3000);
+                
             }
 
         } catch (error) {
@@ -142,7 +147,7 @@ const Page = () => {
                             </Button>
                         </form>
                     </Form>
-
+                    {responseM && <Toast message={responseM}/>}
                     <div className="text-center text-sm text-gray-600">
                         Already have an account?{" "}
                         <Link href='/sign-in' className="text-sky-600 hover:underline">
