@@ -1,5 +1,4 @@
 "use client"
-// import { configDotenv } from "dotenv";
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
 import axios from "axios";
@@ -37,7 +36,7 @@ const Page = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 p-6">
+        <div className="min-h-screen flex items-center justify-center bg-gray-700 p-6">
             <form
                 className="bg-gradient-to-r from-green-200 to-yellow-200 shadow-lg rounded-2xl p-8 w-full max-w-4xl "
                 onSubmit={handlesubmit}
