@@ -1,5 +1,4 @@
 'use client'
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -29,7 +28,7 @@ export default function HomePage() {
             Upload your resume to get instant insights, job matches, and expert suggestions to level up your career.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            <Link href="/sign-up">
+            <Link href="/analyzer">
               <Button className="px-6 py-3 text-lg w-full md:w-auto cursor-pointer">Explore</Button>
             </Link>
             <Link href="/about">
