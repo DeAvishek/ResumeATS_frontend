@@ -12,7 +12,7 @@ const Sidebar = () => {
     ];
     const [activate, setactivate] = useState<string>("Dashboard");
   return (
-    <div className="h-screen w-64 bg-gray-900 text-white flex flex-col">
+    <div className="h-screen bg-gray-900 text-white flex flex-col">
         <div className="text-2xl font-bold p-4 border-b border-gray-700">
             Resume Analyzer
         </div>

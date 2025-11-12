@@ -2,7 +2,7 @@
 import React from "react"
 import SkillDataSore from "../store/skill_store"
 
-const Score = () => {
+const Skillgap = () => {
     const resume_skill = SkillDataSore((state) => state.resume_skill)
     const job_skill = SkillDataSore((state) => state.job_skill)
     const score = SkillDataSore((state) => state.score)
@@ -58,4 +58,4 @@ const Score = () => {
     )
 }
 
-export default Score
+export default Skillgap
