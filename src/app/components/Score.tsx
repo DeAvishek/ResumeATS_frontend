@@ -1,7 +1,6 @@
 "use client"
 import React from "react"
 import SkillDataSore from "../store/skill_store"
-import { spawn } from "child_process"
 
 const Score = () => {
     const resume_skill = SkillDataSore((state) => state.resume_skill)

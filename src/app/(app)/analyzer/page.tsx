@@ -30,7 +30,7 @@ const Page = () => {
             if (response.data.status == 200) {
                 set_skills(response.data.resume_skill,response.data.job_skill,response.data.score)
                 setTimeout(() => {
-                    router.push("/score");
+                    router.push("/dashboard");
                 }, 3000);
             }
         } catch (error) {
