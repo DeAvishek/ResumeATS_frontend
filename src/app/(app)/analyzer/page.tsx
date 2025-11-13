@@ -109,7 +109,7 @@ const Page = () => {
                         className="mt-6 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-lg hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition disabled:opacity-70"
                         disabled={isSubmit}
                     >
-                        {isSubmit ? <Progressbar/>: "Submit"}
+                        {isSubmit ? <Progressbar/>: "Proceed"}
                     </button>
                 </div>
             </form>

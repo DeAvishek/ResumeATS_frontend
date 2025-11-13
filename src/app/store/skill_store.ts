@@ -2,8 +2,8 @@ import {create} from "zustand"
 import {persist,createJSONStorage} from "zustand/middleware"
 type skills = {
     resume_skill:string[],
-    job_skill:string[]
-    score:number
+    job_skill:string[],
+    score:number,
 }
 
 type Actions ={

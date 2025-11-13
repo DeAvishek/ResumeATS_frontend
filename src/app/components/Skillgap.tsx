@@ -11,7 +11,7 @@ const Skillgap = () => {
     return (
         <div className="p-6 space-y-6">
             <div>
-                <h1 className="text-xl font-bold mb-3">Job Skills</h1>
+                <h1 className="text-xl font-bold mb-3  text-white">Job Skills</h1>
                 <div className="flex flex-wrap gap-3">
                     {job_skill.map((item) => (
                         <span
@@ -25,7 +25,7 @@ const Skillgap = () => {
             </div>
 
             <div>
-                <h1 className="text-xl font-bold mb-3">Matching Skills</h1>
+                <h1 className="text-xl font-bold mb-3 text-white">Matching Skills</h1>
                 <div className="flex flex-wrap gap-3">
                     {resume_skill.map((item) => (
                         <span
@@ -38,7 +38,7 @@ const Skillgap = () => {
                 </div>
             </div>
             <div>
-                <h1 className="text-xl font-bold mb-3">!!!</h1>
+                <h1 className="text-xl font-bold mb-3 text-white">!!!</h1>
                 <div className="flex flex-wrap gap-3">
                     {notMatched.map((item) => (
                         <span
@@ -52,7 +52,7 @@ const Skillgap = () => {
             </div>
             
             <div>
-                <span>{score}</span>
+                <span className="text-white">{score}</span>
             </div>
         </div>
     )

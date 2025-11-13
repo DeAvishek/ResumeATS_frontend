@@ -1,12 +1,13 @@
 "use client"
 import React from 'react'
-import { Progress } from '@/components/ui/progress'
-const Progressbar = () => {
+import Stack from '@mui/material/Stack';
+import LinearProgress from '@mui/material/LinearProgress';
+
+export default function Progressbar() {
   return (
-    <div>
-        <Progress value={50}/>
-    </div>
-  )
+    <Stack sx={{ width: '100%', color: 'red.500' }} spacing={2}>
+      <LinearProgress color="secondary" />
+    </Stack>
+  );
 }
 
-export default Progressbar

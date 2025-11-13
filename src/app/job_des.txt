@@ -1,0 +1,64 @@
+We are seeking a skilled and motivated MERN Stack Engineer to join our development team. The ideal candidate should be capable of designing, developing, and deploying scalable full-stack web applications using MongoDB, Express.js, React.js, and Node.js.
+You will collaborate closely with designers, backend engineers, and product managers to deliver seamless, high-performance web experiences.
+
+🎓 Educational Qualification
+
+Bachelor’s or Master’s degree in Computer Science, Information Technology, or a related field.
+
+Strong understanding of data structures, algorithms, and software engineering principles.
+
+(Optional but Preferred) Certified in Full-Stack Development or relevant bootcamps / online programs.
+
+💻 Job Role
+
+As a MERN Stack Engineer, you will be responsible for the end-to-end development of web applications — from UI/UX design to database integration, ensuring robust performance and maintainability.
+
+🧩 Key Responsibilities
+
+Develop, test, and deploy web applications using MERN Stack (MongoDB, Express.js, React.js, Node.js).
+
+Design RESTful APIs and integrate third-party services (e.g., payment gateways, authentication systems).
+
+Work with frontend frameworks to create responsive, user-friendly interfaces.
+
+Optimize application performance for scalability and reliability.
+
+Manage and maintain MongoDB databases including schema design and indexing.
+
+Write clean, maintainable, and well-documented code following best practices.
+
+Collaborate with cross-functional teams (UI/UX, QA, Product) to deliver high-quality features.
+
+Participate in code reviews, debugging, and performance tuning.
+
+Deploy and manage applications on cloud platforms (AWS, Vercel, Render, etc.).
+
+Stay updated with the latest trends and technologies in full-stack development.
+
+⚙️ Required Technologies & Tools
+
+Frontend: React.js, Redux, Next.js, HTML5, CSS3, Tailwind CSS / Bootstrap
+
+Backend: Node.js, Express.js
+
+Database: MongoDB, Mongoose
+
+Version Control: Git, GitHub
+
+Deployment: Vercel, Netlify, AWS, Render, or Docker
+
+APIs: REST, JSON, JWT Authentication
+
+Testing: Jest, Mocha, Postman
+
+Other Skills: Agile methodology, problem-solving, teamwork, debugging, CI/CD basics
+
+🌟 Preferred Skills (Nice to Have)
+
+Experience with TypeScript, GraphQL, or WebSockets
+
+Familiarity with microservices architecture
+
+Knowledge of DevOps tools (Docker, Kubernetes, Jenkins)
+
+Understanding of security and performance optimization in web applications
