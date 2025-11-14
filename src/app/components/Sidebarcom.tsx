@@ -25,7 +25,6 @@ const Sidebarcom = ({ children }: { children: React.ReactNode }) => {
         <div className={`fixed top-0 left-0 h-full bg-gray-900 text-white transition-all duration-300 ${collapsed ? "w-[80px]" : "w-[250px]"
             }`}
         >
-            {/* <img src="..\..\media\analyzer.png" alt="hii" /> */}
             <button
                 className="absolute top-3 left-3 z-50 bg-gray-800 p-2 rounded-md hover:bg-gray-700 transition"
                 onClick={() => setCollapsed(!collapsed)}

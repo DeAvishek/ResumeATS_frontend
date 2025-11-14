@@ -13,7 +13,7 @@ export default function Overallresume() {
         if (oldProgress === 100) {
           return 0;
         }
-        return 67
+        return prog
       });
     }, 500);
     return () => {
