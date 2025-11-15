@@ -3,6 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import SkillDataSore from '@/app/store/skill_store';
+import ScoreBar from './ScoreBar';
 export default function Overallresume() {
   const prog = SkillDataSore((state)=>state.score)
   const [progress, setProgress] = React.useState(0);
@@ -21,24 +22,6 @@ export default function Overallresume() {
     };
   }, []);
   return (
-    <Box sx={{ width: '300px' }}>
-      <LinearProgress 
-      className='mt-10'
-        variant="determinate" 
-        
-        value={progress} 
-        sx={{ height: 25, borderRadius: 5 ,
-            backgroundColor:"#dededeff",
-            "& .MuiLinearProgress-bar": {
-            backgroundColor: progress < 50
-          ? "#ee3929ff"        // red for <50
-          : progress <= 75
-          ? "#f2a013ff"        // orange for 51-75
-          : "#19d80fff",   // fill color
-          },
-          transition: "width 1.2s ease-in-out"
-        }} // increase height here
-      />
-    </Box>
+    <ScoreBar score={progress}/>
   );
 }

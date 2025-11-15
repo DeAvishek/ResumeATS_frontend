@@ -43,8 +43,8 @@ const ScoreAnalysis = () => {
                 progress < 50
                   ? "rgba(255, 0, 0, 1)"
                   : progress < 75
-                    ? "rgba(206, 151, 34, 1)"
-                    : "rgba(0, 255, 40, 1)",
+                    ? "rgba(238, 155, 72, 1)"
+                    : "rgba(44, 188, 65, 1)",
               textColor: "#111",
               trailColor: "#eee",
               backgroundColor: "#000",

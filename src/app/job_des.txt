@@ -37,7 +37,7 @@ Stay updated with the latest trends and technologies in full-stack development.
 
 ⚙️ Required Technologies & Tools
 
-Frontend: React.js, Redux, Next.js, HTML5, CSS3, Tailwind CSS / Bootstrap
+Frontend: React.js, Redux, Next.js,
 
 Backend: Node.js, Express.js
 
@@ -45,11 +45,10 @@ Database: MongoDB, Mongoose
 
 Version Control: Git, GitHub
 
-Deployment: Vercel, Netlify, AWS, Render, or Docker
 
 APIs: REST, JSON, JWT Authentication
 
-Testing: Jest, Mocha, Postman
+Testing: Postman
 
 Other Skills: Agile methodology, problem-solving, teamwork, debugging, CI/CD basics
 
@@ -59,6 +58,73 @@ Experience with TypeScript, GraphQL, or WebSockets
 
 Familiarity with microservices architecture
 
-Knowledge of DevOps tools (Docker, Kubernetes, Jenkins)
+Knowledge of DevOps tools 
 
 Understanding of security and performance optimization in web applications
+
+
+
+
+
+
+We are seeking a passionate and highly motivated Software Developer with strong foundational knowledge in computer science, hands-on experience in full-stack web development, and solid problem-solving ability. The ideal candidate has worked on modern JavaScript frameworks, backend services, and real-world projects involving data structures, algorithms, and cloud-based technologies.
+
+Key Responsibilities
+
+Develop and maintain full-stack applications using React.js / Next.js, Node.js, and Express.js.
+
+Design RESTful and GraphQL APIs while ensuring scalability, performance, and security.
+
+Collaborate on building interactive UI components and integrating responsive front-end features.
+
+Work on backend logic including authentication, business workflows, data storage, and optimization.
+
+Implement and improve database schemas using MongoDB and MySQL.
+
+Work with third-party tools and APIs such as Thunder Client, Postman, Stripe, and GenAI APIs.
+
+Apply strong understanding of data structures, algorithms, and software engineering principles to solve complex technical problems.
+
+Contribute to design discussions, UML diagrams, and technical documentation for system components.
+
+Participate in the full SDLC — planning, development, debugging, deployment, and maintenance.
+
+Technical Skills Required
+
+Languages: JavaScript, TypeScript, Python
+
+Frameworks & Libraries: Next.js, React.js, Express.js
+
+Databases: MongoDB, MySQL
+
+Tools & Technologies: Git, Thunder Client, Postman, REST APIs, GraphQL
+
+CS Fundamentals: Data Structures & Algorithms, OOP, Competitive Programming
+
+Extra: Familiarity with ML concepts like matrix factorization is a plus
+
+Preferred Qualifications
+
+Bachelor’s or Master’s degree in Computer Science (or pursuing).
+
+Experience with virtual programs or workshops in software development (e.g., Walmart Advanced Software Engineering Program on Forage).
+
+Prior experience building end-to-end full-stack projects, including UI, backend, and integrations.
+
+Notable Project Experience
+
+Built a movie ticket booking platform (Film Fusion) using MERN stack with seat selection, payments, and personalized recommendations using matrix factorization.
+
+Developed TrueFeedback, a feedback collection app integrating GenAI to generate automated suggestions for users.
+
+Implemented a custom heap data structure in JavaScript and contributed to UML system design during virtual internships.
+
+Soft Skills
+
+Strong analytical and problem-solving mindset
+
+Excellent communication
+
+Ability to work independently and as part of a team
+
+Quick learner with a passion for technology and innovation
