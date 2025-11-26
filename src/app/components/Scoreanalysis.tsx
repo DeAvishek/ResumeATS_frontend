@@ -5,6 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import SkillDataSore from "../store/skill_store";
 import Overallresume from "./linerprogress/Overallresume";
 import Skillbase_Cir from "./linerprogress/Skillbase_Cir";
+import Recomenadtio from "./Recomenadtio";
 const ScoreAnalysis = () => {
   let prog = SkillDataSore((state) => state.score);
   prog = Math.ceil(prog)
@@ -29,7 +30,7 @@ const ScoreAnalysis = () => {
     }, []);
   return (
     <div className="p-6 space-y-6 ">
-      <div className=" bg-gray-50 rounded-xl shadow-md flex flex-wrap">
+      <div className=" bg-gray-600 rounded-xl shadow-md flex flex-wrap text-white">
         <div className="w-100 h-100 flex flex-col items-center">
           <CircularProgressbar
             value={progress}
@@ -45,15 +46,18 @@ const ScoreAnalysis = () => {
                   : progress < 75
                     ? "rgba(238, 155, 72, 1)"
                     : "rgba(44, 188, 65, 1)",
-              textColor: "#111",
+              textColor: "#f7efefff",
               trailColor: "#eee",
               backgroundColor: "#000",
             })}
           />
           <Overallresume/>
-          <p className="text-black-600 text-lg mt-3">Overall Resume Score</p>
+          <p className="text-white text-lg mt-3">Overall Resume Score</p>
         </div>
         <Skillbase_Cir/>
+      </div>
+      <div className="bg-gray-600 rounded-xl shadow-md flex flex-wrap text-white">
+        <Recomenadtio/>
       </div>
     </div>
   );

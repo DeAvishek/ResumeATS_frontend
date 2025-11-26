@@ -32,19 +32,21 @@ const Skillbase_Cir = () => {
                     strokeLinecap: "round",
                     textSize: "14px",
                     pathTransitionDuration: 0.5,
+                    
                     pathColor:
                         progress < 50
                             ? "rgba(255, 0, 0, 1)"
                             : progress < 75
                                 ? "rgba(238, 155, 72, 1)"
                                 : "rgba(44, 188, 65, 1)",
-                    textColor: "#111",
+                    textColor: "#fcfafaff",
                     trailColor: "#eee",
                     backgroundColor: "#000",
+                    
                 })}
             />
             <Skillbase_line/>
-            <p className="text-black-600 text-lg mt-3">Overall Skill Score</p>
+            <p className="text-white text-lg mt-3">Overall Skill Score</p>
         </div>
     )
 }

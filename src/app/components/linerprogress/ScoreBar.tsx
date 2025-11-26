@@ -6,8 +6,7 @@ type scoretype={
 export default function ScoreBar({score}:scoretype) {
   return (
     <div style={{ width: "300px", fontFamily: "sans-serif" }}>
-    <p><b>{score}</b> out of 100.</p>
-
+    <p className="text-white"><b>{score}</b> out of 100.</p>
       <div
         style={{
           position: "relative",

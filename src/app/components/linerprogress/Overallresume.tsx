@@ -5,17 +5,13 @@ import LinearProgress from '@mui/material/LinearProgress';
 import SkillDataSore from '@/app/store/skill_store';
 import ScoreBar from './ScoreBar';
 export default function Overallresume() {
-  const prog = SkillDataSore((state)=>state.score)
+  let prog = SkillDataSore((state)=>state.score)
+  prog = Math.ceil(prog)
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          return 0;
-        }
-        return prog
-      });
+      setProgress(prog);
     }, 500);
     return () => {
       clearInterval(timer);
