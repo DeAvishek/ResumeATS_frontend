@@ -9,11 +9,6 @@ import Recomenadtio from "./Recomenadtio";
 const ScoreAnalysis = () => {
   let prog = SkillDataSore((state) => state.score);
   prog = Math.ceil(prog)
-  const brief = [
-    { grade: "Average", color: "bg-red-500" },
-    { grade: "Good", color: "bg-yellow-500" },
-    { grade: "Excellent", color: "bg-green-500" },
-  ];
   const [progress,setProgress] = React.useState<number>(0)
   React.useEffect(() => {
       const timer = setInterval(() => {

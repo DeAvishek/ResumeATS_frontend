@@ -38,7 +38,7 @@ const Skillgap = () => {
                 </div>
             </div>
             <div>
-                <h1 className="text-xl font-bold mb-3 text-white">!!!</h1>
+                <h1 className="text-xl font-bold mb-3 text-white">Not Matchecd Skills</h1>
                 <div className="flex flex-wrap gap-3">
                     {notMatched.map((item) => (
                         <span
@@ -49,10 +49,6 @@ const Skillgap = () => {
                         </span>
                     ))}
                 </div>
-            </div>
-            
-            <div>
-                <span className="text-white">{score}</span>
             </div>
         </div>
     )
