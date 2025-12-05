@@ -19,7 +19,7 @@ const Skillgap = () => {
             {/* Header with Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
                 <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap gap-60 items-center">
                         <div>
                             <p className="text-sm text-gray-400 mb-1">Job Requirements</p>
                             <p className="text-2xl font-bold text-white">{job_skill.length} skills</p>

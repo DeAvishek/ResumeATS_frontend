@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import SkillDataSore from '../store/skill_store'
 import { Button } from "../../components/ui/button"
 import generate from "@/app/genai"
-import { Badge, Check, Info, Lightbulb, Plus } from 'lucide-react'
+import { Badge, Check, Info, Lightbulb } from 'lucide-react'
 
 const Recomenadtio = () => {
     const resume_skill = SkillDataSore((state) => state.resume_skill);
