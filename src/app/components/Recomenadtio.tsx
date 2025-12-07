@@ -11,7 +11,6 @@ const Recomenadtio = () => {
     const notMatchSkills = job_skill.filter(item => !resume_skill.includes(item))
     let prog = SkillDataSore((state)=>state.score)
     prog = Math.ceil(prog)
-    notMatchSkills.push("react")
 
     const [tooltips, setTooltips] = React.useState<Map<string, string>>(new Map())
     const skillmap = React.useRef(new Map<string, string>())
@@ -19,8 +18,8 @@ const Recomenadtio = () => {
         const fetchTooltips = async () => {
             for (const skill of notMatchSkills) {
                 if (!skillmap.current.has(skill)) {
-                    // let why = await generate({ skill })
-                    skillmap.current.set(skill, "")
+                    let why = await generate(skill)
+                    skillmap.current.set(skill,why||" ")
 
                 }
             }

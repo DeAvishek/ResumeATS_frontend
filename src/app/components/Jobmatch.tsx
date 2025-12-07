@@ -2,15 +2,13 @@
 import React,{useState,useEffect} from 'react'
 import {JobMatchGenerate,} from "@/app/genai"
 import SkillDataSore from '../store/skill_store'
-import { string } from 'zod'
-
 const Jobmatch = () => {
     const [jobMatchStr, setjobMatchStr] = useState<string>("")
     const ResumeSkill = SkillDataSore((state)=>state.resume_skill)
     useEffect(()=>{
         const generate = async()=>{
             try {
-                const str = await JobMatchGenerate({ResumeSkill});
+                const str = await JobMatchGenerate(ResumeSkill);
                 setjobMatchStr(str||"are you there")
                 
             } catch (error) {
@@ -20,12 +18,12 @@ const Jobmatch = () => {
         }
         generate()
     },[])
-    console.log("hii",jobMatchStr)
-    const fake = jobMatchStr.replace(".","|")
-    const Rjobs_Why = fake.split("|")
+    let fake = jobMatchStr.replace('.','|')
+    fake = fake.replace('.','|')
+    const Rjobs_Why = fake.split('|')
   return (
     <div className="p-6 space-y-8">
-        <p className='text-white'>{jobMatchStr}</p>
+        <p className='text-white'>{fake}</p>
         <div className='flex flex-col gap-3 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700'>
             <div>
                 <h5 className="font-semibold text-blue-900 ">{Rjobs_Why[0]}</h5>
