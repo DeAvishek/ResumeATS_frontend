@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Progressbar from "@/app/components/Progressbar";
 import SkillDataSore from "@/app/store/skill_store";
 const Page = () => {
-    const url = process.env.BACKEND_URL;
+    
     const router = useRouter();
     const [jobdesc, setJobdesc] = useState<string>("");
     const [file, setFile] = useState<File | null>(null);
@@ -21,10 +21,11 @@ const Page = () => {
         const formData = new FormData();
         formData.append("jobdesc", jobdesc);
         formData.append("file", file);
-
+        const BackEndUrl="http://127.0.0.1:8000"
+        
         try {
             setisSubmit(true);
-            const response = await axios.post(`http://127.0.0.1:8000/analyze/upload`, formData, {
+            const response = await axios.post(`${BackEndUrl}/analyze/upload`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             if (response.data.status == 200) {

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import SkillDataSore from '../store/skill_store'
 import { Button } from "../../components/ui/button"
 import generate from "@/app/genai"
@@ -18,8 +18,8 @@ const Recomenadtio = () => {
         const fetchTooltips = async () => {
             for (const skill of notMatchSkills) {
                 if (!skillmap.current.has(skill)) {
-                    let why = await generate(skill)
-                    skillmap.current.set(skill,why||" ")
+                    // let why = await generate(skill) to avoid much calls
+                    skillmap.current.set(skill,"hii")
 
                 }
             }

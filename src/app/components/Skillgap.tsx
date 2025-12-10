@@ -6,7 +6,6 @@ import { Check, X, AlertCircle, Target, TrendingUp, BarChart3, ClipboardCheck } 
 const Skillgap = () => {
     const resume_skill = SkillDataSore((state) => state.resume_skill)
     const job_skill = SkillDataSore((state) => state.job_skill)
-    const score = SkillDataSore((state) => state.score)
     const notMatched = job_skill.filter(value => !resume_skill.includes(value))
     
     // Calculate match percentage
@@ -16,7 +15,6 @@ const Skillgap = () => {
 
     return (
         <div className="p-6 space-y-8">
-            {/* Header with Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8">
                 <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700">
                     <div className="flex flex-wrap gap-60 items-center">

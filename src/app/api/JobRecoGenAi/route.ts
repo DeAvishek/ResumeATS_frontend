@@ -5,11 +5,10 @@ export async function POST(req:Request) {
     const {ResumeSkill} = await req.json();
     const API_KEY = process.env.GEN_AI_API_KEY
     const AllSkills = ResumeSkill.join(",")
-    console.log(ResumeSkill)
     const prompt = `Act as a Job Recommendation AI Assistant.
                     Using the user's skills (${AllSkills}), suggest the 
                     top 3 suitable jobs and why this job with in 20 words
-                    like: job|why|job|why|job|why`
+                    like: job|why`
     const ai = new GoogleGenAI({ apiKey: API_KEY })
     try {
         const result = await ai.models.generateContent({

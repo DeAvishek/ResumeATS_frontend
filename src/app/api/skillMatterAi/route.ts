@@ -4,12 +4,10 @@ export async function POST(req:Request) {
     const API_KEY = process.env.GEN_AI_API_KEY
     const ai = new GoogleGenAI({ apiKey: API_KEY })
     const prompt = `You are an AI assintant who discuss why ${skill} is important for job application with in 20 words`
-    console.log(API_KEY)
-    console.log(skill)
     if(!API_KEY){
         return new Response(
                 JSON.stringify({
-                    result:"hii"
+                    result:"Api key is not loaded"
                 }),{
                     status:400
                 }

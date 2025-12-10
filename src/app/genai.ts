@@ -5,7 +5,7 @@ type ResumeSkill = string[]
 const generate = async (skill:skill) => {
     try {
         const res = await axios.post("/api/skillMatterAi", {skill:skill});
-        return res.data.result;
+        if(res.status==200)return res.data.result;
     } catch (err) {
         console.error("AI generate error:", err);
         return ""; // avoid breaking frontend loops
@@ -14,7 +14,7 @@ const generate = async (skill:skill) => {
 
 export const JobMatchGenerate = async (ResumeSkill:ResumeSkill) => {
     try {
-        const res = await axios.post("/api/JobRecoGenAi", { ResumeSkill:ResumeSkill });
+        const res = await axios.post("/api/JobRecoGenAi", {ResumeSkill});
         return res.data.result;
     } catch (err) {
         console.error("AI generate error:", err);

@@ -104,9 +104,6 @@ const ScoreAnalysis = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Experience Level */}
-
               </div>
 
               {/* Skill Breakdown Section */}
