@@ -128,14 +128,14 @@ const ScoreAnalysis = () => {
           </div>
 
           {/* Improvement Tips */}
-          <div className="mt-6 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+          {resumeSkill.length!==job_skill.length && <div className="mt-6 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
             <div className="flex items-center gap-3">
               <Lightbulb className="h-5 w-5 text-amber-400 flex-shrink-0" />
               <p className="text-sm text-gray-300">
                 <span className="font-medium text-white">Pro Tip:</span> Adding just 3 more skills from the recommendations can increase your match rate by up to90 %
               </p>
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </div>

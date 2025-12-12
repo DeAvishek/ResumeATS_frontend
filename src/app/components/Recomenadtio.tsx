@@ -134,15 +134,14 @@ const Recomenadtio = () => {
                 <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                     <div
                         className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500"
-                        style={{ width: '65%' }}
+                        style={{ width: `${prog}%` }}
                     ></div>
                 </div>
-                <p className="text-xs text-gray-200 mt-2">
+                {resume_skill.length!==job_skill.length && <p className="text-xs text-gray-200 mt-2">
                     Adding these skills could increase your match score to <strong>90%</strong>
-                </p>
+                </p>}
             </div>
         </div>
     )
 }
-
 export default Recomenadtio
