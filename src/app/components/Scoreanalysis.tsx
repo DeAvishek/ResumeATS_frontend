@@ -6,7 +6,7 @@ import SkillDataSore from "../store/skill_store";
 import Overallresume from "./linerprogress/Overallresume";
 import Skillbase_Cir from "./linerprogress/Skillbase_Cir";
 import Recomenadtio from "./Recomenadtio";
-import { Lightbulb, Sparkles, Target, TrendingUp } from "lucide-react";
+import { Lightbulb, Sparkles, Target} from "lucide-react";
 const ScoreAnalysis = () => {
   let prog = SkillDataSore((state) => state.score);
   prog = Math.ceil(prog)

@@ -1,15 +1,18 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import SkillDataSore from '../store/skill_store'
 import { Button } from "../../components/ui/button"
 import generate from "@/app/genai"
 import { Badge, Check, Info, Lightbulb } from 'lucide-react'
+import { set } from 'zod'
+import Loader from './Loader'
 
 const Recomenadtio = () => {
     const resume_skill = SkillDataSore((state) => state.resume_skill);
     const job_skill = SkillDataSore((state) => state.job_skill)
     const notMatchSkills = job_skill.filter(item => !resume_skill.includes(item))
     let prog = SkillDataSore((state)=>state.score)
+    const [loading,seloading] = useState<boolean>(true);
     prog = Math.ceil(prog)
 
     const [tooltips, setTooltips] = React.useState<Map<string, string>>(new Map())
@@ -18,14 +21,19 @@ const Recomenadtio = () => {
         const fetchTooltips = async () => {
             for (const skill of notMatchSkills) {
                 if (!skillmap.current.has(skill)) {
-                    // let why = await generate(skill) to avoid much calls
-                    skillmap.current.set(skill,"hii")
-
+                    try {
+                        let why = await generate(skill)
+                        skillmap.current.set(skill,why||"")
+                        seloading(false)
+                    } catch (error) {
+                        skillmap.current.set(skill,"")
+                        seloading(false)
+                    }
+                      
                 }
             }
             setTooltips(new Map(skillmap.current))
         }
-
         fetchTooltips()
     }, [])
 
@@ -105,7 +113,7 @@ const Recomenadtio = () => {
                                 <Lightbulb className="h-5 w-5 text-amber-500" />
                                 Why These Skills Are Important
                             </h4>
-                            <div className="space-y-4">
+                            {loading?<Loader/>:(<div className="space-y-4">
                                 {Array.from(tooltips.entries()).slice(0, 3).map(([skill, why]) => (
                                     <div key={skill} className="p-3 rounded-lg bg-blue-50 border border-blue-100 hover:bg-blue-100 transition-colors">
                                         <div className="flex items-start gap-3">
@@ -114,12 +122,12 @@ const Recomenadtio = () => {
                                             </div>
                                             <div>
                                                 <h5 className="font-semibold text-blue-900 ">{skill}</h5>
-                                                <p className="text-sm text-gray-700 mt-1">{why||"hii i am god"}</p>
+                                                <p className="text-sm text-gray-700 mt-1">{why||"Internal server error sorry for your disturbance"}</p>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
-                            </div>
+                            </div>)}
                         </div>
                     )}
                 </>

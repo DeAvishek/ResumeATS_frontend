@@ -1,21 +1,24 @@
 "use client"
-import React, { useState, useEffect } from 'react'
+import{ useState, useEffect } from 'react'
 import { JobMatchGenerate, } from "@/app/genai"
 import SkillDataSore from '../store/skill_store'
 import { Lightbulb, Target } from "lucide-react"
+import Loader from './Loader'
 const Jobmatch = () => {
     const [jobMatchStr, setjobMatchStr] = useState<string>("")
+    const [Loading,setLoading] = useState<boolean>(true)
     const ResumeSkill = SkillDataSore((state) => state.resume_skill)
     useEffect(() => {
         const generate = async () => {
             try {
-                // const str = await JobMatchGenerate(ResumeSkill);
-                //to avoid much calls
-                setjobMatchStr(" ")
+                const str = await JobMatchGenerate(ResumeSkill);
+                setjobMatchStr(str||"")
+                setLoading(prev=>!prev)
 
             } catch (error) {
                 console.log(error)
                 setjobMatchStr("");
+                setLoading(prev=>!prev)
             }
         }
         generate()
@@ -30,7 +33,7 @@ const Jobmatch = () => {
                 <Lightbulb className='h-10 w-10 text-amber-500' />
                 <p className='font-bold text-xl text-white mt-1'>AI Powered Jobs Recomendation 💥 based on Your Resume Skills</p>
             </div>
-            {Rjobs_Why.length > 2 ? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
+            {!Loading?<Loader/>:Loading && Rjobs_Why.length > 2? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
                 const i = idx * 2;
                 return (
                     <div
@@ -60,6 +63,7 @@ const Jobmatch = () => {
                     </div>
                 </div>
             )}
+            <Loader/>
         </div>
     )
 }
