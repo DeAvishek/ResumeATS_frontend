@@ -13,12 +13,12 @@ const Jobmatch = () => {
             try {
                 const str = await JobMatchGenerate(ResumeSkill);
                 setjobMatchStr(str||"")
-                setLoading(prev=>!prev)
+                setLoading(false)
 
             } catch (error) {
                 console.log(error)
                 setjobMatchStr("");
-                setLoading(prev=>!prev)
+                setLoading(false)
             }
         }
         generate()
@@ -33,7 +33,7 @@ const Jobmatch = () => {
                 <Lightbulb className='h-10 w-10 text-amber-500' />
                 <p className='font-bold text-xl text-white mt-1'>AI Powered Jobs Recomendation 💥 based on Your Resume Skills</p>
             </div>
-            {!Loading?<Loader/>:Loading && Rjobs_Why.length > 2? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
+            {Loading?<Loader/>:!Loading && Rjobs_Why.length > 2? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
                 const i = idx * 2;
                 return (
                     <div
@@ -63,7 +63,6 @@ const Jobmatch = () => {
                     </div>
                 </div>
             )}
-            <Loader/>
         </div>
     )
 }
