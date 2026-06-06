@@ -15,6 +15,7 @@ const Jobmatch = () => {
         const generate = async () => {
             try {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 const str = await JobMatchGenerate(ResumeSkill);
                 setjobMatchStr(str||"")
                 setLoading(false)
@@ -28,10 +29,19 @@ const Jobmatch = () => {
                 const str = await JobMatchGenerate(resumeSkill);
                 setJobMatchStr(str || "")
             } catch (error) {
+=======
+                setLoading(true) // Explicitly set to true when starting
+                const str = await JobMatchGenerate(resumeSkill);
+                setJobMatchStr(str || "")
+            } catch (error) {
+>>>>>>> f182131 (fixing the ai recomendation thing)
                 console.error("Error generating job match:", error)
                 setJobMatchStr("");
             } finally {
                 setLoading(false) // Always turns off loading when done
+<<<<<<< HEAD
+>>>>>>> f182131 (fixing the ai recomendation thing)
+=======
 >>>>>>> f182131 (fixing the ai recomendation thing)
             }
         }
@@ -54,6 +64,7 @@ const Jobmatch = () => {
                 </p>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
             {Loading?<Loader/>:!Loading && Rjobs_Why.length > 2? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
                 const i = idx * 2;
                 return (
@@ -64,6 +75,8 @@ const Jobmatch = () => {
                         <div className='flex flex-wrap gap-2'>
                             <Target className="text-amber-500" />
 =======
+=======
+>>>>>>> f182131 (fixing the ai recomendation thing)
 
             {/* Conditional Rendering Logic */}
             {loading ? (
@@ -83,6 +96,9 @@ const Jobmatch = () => {
                                     {cleanPairs[i]}
                                 </h2>
                             </div>
+<<<<<<< HEAD
+>>>>>>> f182131 (fixing the ai recomendation thing)
+=======
 >>>>>>> f182131 (fixing the ai recomendation thing)
                             <div>
                                 <h2 className='font-semibold text-gray-100 mt-1'>
