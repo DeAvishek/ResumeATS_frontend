@@ -8,41 +8,24 @@ import Loader from './Loader'
 const Jobmatch = () => {
     const [jobMatchStr, setJobMatchStr] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(true)
-    
     const resumeSkill = SkillDataStore((state) => state.resume_skill)
-
     useEffect(() => {
         const generate = async () => {
             try {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                const str = await JobMatchGenerate(ResumeSkill);
-                setjobMatchStr(str||"")
+                const str = await JobMatchGenerate(resumeSkill);
+                setJobMatchStr(str||"")
                 setLoading(false)
 
             } catch (error) {
                 console.log(error)
-                setjobMatchStr("");
-                setLoading(false)
-=======
-                setLoading(true) // Explicitly set to true when starting
-                const str = await JobMatchGenerate(resumeSkill);
-                setJobMatchStr(str || "")
-            } catch (error) {
-=======
-                setLoading(true) // Explicitly set to true when starting
-                const str = await JobMatchGenerate(resumeSkill);
-                setJobMatchStr(str || "")
-            } catch (error) {
->>>>>>> f182131 (fixing the ai recomendation thing)
-                console.error("Error generating job match:", error)
                 setJobMatchStr("");
-            } finally {
+                setLoading(false)
+                setLoading(true) // Explicitly set to true when starting
+                const str = await JobMatchGenerate(resumeSkill);
+                setJobMatchStr(str || "")
+            }finally {
                 setLoading(false) // Always turns off loading when done
-<<<<<<< HEAD
->>>>>>> f182131 (fixing the ai recomendation thing)
-=======
->>>>>>> f182131 (fixing the ai recomendation thing)
+
             }
         }
         generate()
@@ -63,20 +46,7 @@ const Jobmatch = () => {
                     AI Powered Jobs Recommendation 💥 based on Your Resume Skills
                 </p>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            {Loading?<Loader/>:!Loading && Rjobs_Why.length > 2? Array.from({ length: Rjobs_Why.length / 2 }).map((_, idx) => {
-                const i = idx * 2;
-                return (
-                    <div
-                        key={i}
-                        className='flex flex-col gap-4 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700'
-                    >
-                        <div className='flex flex-wrap gap-2'>
-                            <Target className="text-amber-500" />
-=======
-=======
->>>>>>> f182131 (fixing the ai recomendation thing)
+
 
             {/* Conditional Rendering Logic */}
             {loading ? (
@@ -96,10 +66,6 @@ const Jobmatch = () => {
                                     {cleanPairs[i]}
                                 </h2>
                             </div>
-<<<<<<< HEAD
->>>>>>> f182131 (fixing the ai recomendation thing)
-=======
->>>>>>> f182131 (fixing the ai recomendation thing)
                             <div>
                                 <h2 className='font-semibold text-gray-100 mt-1'>
                                     {cleanPairs[i + 1]}
