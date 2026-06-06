@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
+// import "react-circular-progressbar/dist/styles.css";
 import SkillDataSore from "../store/skill_store";
 import Overallresume from "./linerprogress/Overallresume";
 import Skillbase_Cir from "./linerprogress/Skillbase_Cir";
@@ -132,7 +132,7 @@ const ScoreAnalysis = () => {
             <div className="flex items-center gap-3">
               <Lightbulb className="h-5 w-5 text-amber-400 flex-shrink-0" />
               <p className="text-sm text-gray-300">
-                <span className="font-medium text-white">Pro Tip:</span> Adding just 3 more skills from the recommendations can increase your match rate by up to90 %
+                <span className="font-medium text-white">Pro Tip:</span> Adding just more skills from the recommendations can increase your match rate by up to90 %
               </p>
             </div>
           </div>}

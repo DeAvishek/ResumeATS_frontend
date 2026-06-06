@@ -7,7 +7,6 @@ import dash_item_store from "../store/dash_item_store";
 const Sidebarcom = ({ children }: { children: React.ReactNode }) => {
     const sideBarMenu = [
         { name: "Dashboard", icon: <FaHome /> },
-        { name: "Resume Upload", icon: <FaFileAlt /> },
         { name: "Job Match", icon: <FaChartLine /> },
         { name: "Skill Gap", icon: <FaUser /> },
         { name: "Settings", icon: <FaCog /> },

@@ -4,7 +4,6 @@ import SkillDataSore from '../store/skill_store'
 import { Button } from "../../components/ui/button"
 import generate from "@/app/genai"
 import { Badge, Check, Info, Lightbulb } from 'lucide-react'
-import { set } from 'zod'
 import Loader from './Loader'
 
 const Recomenadtio = () => {
@@ -39,7 +38,6 @@ const Recomenadtio = () => {
 
     return (
         <div className="p-6 rounded-xl shadow-lg space-y-6">
-            {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
                     <h3 className="text-xl font-bold text-white">Recommended Skills to Add</h3>

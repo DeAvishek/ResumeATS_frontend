@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import Progressbar from "@/app/components/Progressbar";
 import SkillDataSore from "@/app/store/skill_store";
 const Page = () => {
-    
     const router = useRouter();
     const [jobdesc, setJobdesc] = useState<string>("");
     const [file, setFile] = useState<File | null>(null);
@@ -21,7 +20,7 @@ const Page = () => {
         const formData = new FormData();
         formData.append("jobdesc", jobdesc);
         formData.append("file", file);
-        const BackEndUrl="http://127.0.0.1:8000"
+        const BackEndUrl="http://127.0.0.1:8000" //replace with backend url
         
         try {
             setisSubmit(true);

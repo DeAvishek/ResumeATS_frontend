@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { HfInference } from "@huggingface/inference";
 import { pipeline } from "@xenova/transformers"
 dotenv.config();
+<<<<<<< HEAD
 export async function POST(req: Request) {
     const { ResumeSkill } = await req.json();
     const HfToken = process.env.HF_TRANSFORMER_API_KEY
@@ -39,6 +40,28 @@ export async function POST(req: Request) {
                     result: response[0].generated_text
                 }), {
                 status: 200
+=======
+export async function POST(req:Request) {
+    const {AllSkills} = await req.json();
+    const API_KEY = process.env.GEN_AI_API_KEY
+    console.log("this is resume skills...",AllSkills)
+    const prompt = `Act as a Job Recommendation AI Assistant.
+                    Using the user's skills (${AllSkills}), suggest the 
+                    top 3 suitable jobs and why this job with in 20 words
+                    like: job|why`
+    const ai = new GoogleGenAI({ apiKey: API_KEY })
+    try {
+        const result = await ai.models.generateContent({
+            model: "gemini-2.5-flash",
+            contents: prompt
+        });
+        if (result) {
+           return new Response(
+            JSON.stringify({
+                result:result.text,
+            }),{
+                status:200
+>>>>>>> f182131 (fixing the ai recomendation thing)
             }
             )
         }
