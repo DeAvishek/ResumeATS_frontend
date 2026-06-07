@@ -6,8 +6,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen flex bg-gray-900">
       {/* Sidebar */}
-      <Sidebarcom/>
-
+      <Sidebarcom>
+        <span className="text-red-300">ResumeAnlyzer</span>
+      </Sidebarcom>
       {/* Main content */}
       <div className="flex-1 ml-[250px] transition-all duration-300 p-6">
         {children}
