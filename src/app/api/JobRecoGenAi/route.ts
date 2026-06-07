@@ -27,22 +27,3 @@ export async function POST(req:Request) {
         return new Response(JSON.stringify({ success: false, message:error instanceof Error ?error.message :"Internal server error" }), { status: 500 })
     }
 }
-
-// const response = await fetch(
-//     "https://api-inference.huggingface.co/models/gpt2",
-//     {
-//         method: "POST",
-//         headers: {
-//             "Authorization": `Bearer ${HfToken}`,
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify({
-//             inputs: prompt,
-//             parameters: {
-//                 max_new_tokens: 150,
-//                 temperature: 0.7,
-//                 return_full_text: false
-//             }
-//         })
-//     }
-// );

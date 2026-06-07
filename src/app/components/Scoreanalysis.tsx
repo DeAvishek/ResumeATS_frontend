@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-// import "react-circular-progressbar/dist/styles.css";
 import SkillDataSore from "../store/skill_store";
 import Overallresume from "./linerprogress/Overallresume";
 import Skillbase_Cir from "./linerprogress/Skillbase_Cir";
@@ -53,7 +52,7 @@ const ScoreAnalysis = () => {
                   styles={buildStyles({
                     rotation: 0.25,
                     strokeLinecap: 'round',
-                    textSize: '28px',
+                    textSize: '11px',
                     pathTransitionDuration: 1,
                     pathColor: progress < 50
                       ? "rgba(255, 0, 0, 1)"

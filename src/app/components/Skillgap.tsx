@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import SkillDataSore from "../store/skill_store"
 import { Check, X, AlertCircle, Target, TrendingUp, BarChart3, ClipboardCheck } from "lucide-react"
 

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
-import { FaHome, FaFileAlt, FaChartLine, FaCog, FaUser } from "react-icons/fa";
+import { FaHome, FaChartLine, FaCog, FaUser } from "react-icons/fa";
 import dash_item_store from "../store/dash_item_store";
 
 const Sidebarcom = ({ children }: { children: React.ReactNode }) => {

@@ -1,10 +1,7 @@
 "use client"
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 import SkillDataSore from '@/app/store/skill_store';
 import ScoreBar from './ScoreBar';
-// import { Sidebar } from 'lucide-react';
 export default function Skillbase_line() {
     const Resume_skill = SkillDataSore((state) => state.resume_skill);
     const job_skill = SkillDataSore((state) => state.job_skill);

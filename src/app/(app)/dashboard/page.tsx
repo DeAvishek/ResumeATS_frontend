@@ -1,5 +1,4 @@
 "use client"
-import React from 'react'
 import Skillgap from '@/app/components/Skillgap'
 import Scoreanalysis from '@/app/components/Scoreanalysis'
 import dash_item_store from '@/app/store/dash_item_store'

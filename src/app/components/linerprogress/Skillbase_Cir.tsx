@@ -3,7 +3,6 @@ import React from 'react'
 import SkillDataSore from '@/app/store/skill_store'
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import Skillbase_line from './Skillbase_line';
-import "react-circular-progressbar/dist/styles.css";
 const Skillbase_Cir = () => {
     const Resume_skill = SkillDataSore((state) => state.resume_skill);
     const job_skill = SkillDataSore((state) => state.job_skill);
@@ -44,7 +43,7 @@ const Skillbase_Cir = () => {
 
                 })}
             />
-            <Skillbase_line />
+            <Skillbase_line/>
             <p className="text-white text-lg mt-3">Overall Skill Score</p>
             
         </div>

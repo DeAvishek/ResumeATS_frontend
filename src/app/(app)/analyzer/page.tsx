@@ -20,7 +20,7 @@ const Page = () => {
         const formData = new FormData();
         formData.append("jobdesc", jobdesc);
         formData.append("file", file);
-        const BackEndUrl="http://127.0.0.1:8000" //replace with backend url
+        const BackEndUrl="http://127.0.0.1:8000" //replace with backend url produduction ready
         
         try {
             setisSubmit(true);
